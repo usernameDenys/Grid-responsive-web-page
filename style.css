@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* reset styles */
+* {
+    color: inherit;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    /*1rem = 10px*/
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+/*desktop styles*/
+
+.body {
+    display: grid;
+    place-items: center;
+}
+
+.title {
+    font-size: 4rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 33.1rem 1fr 33.1rem;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header header"
+        "nav main links"
+        "footer footer footer";
+    max-width: 160rem;
+    min-height: 100vh;
+}
+
+.header {
+    grid-area: header;
+    height: 21.4rem;
+    text-align: center;
+    line-height: 21.4rem;
+    background-color: #EA5E32;
+    color: #fff;
+}
+
+.nav {
+    grid-area: nav;
+    text-align: center;
+    line-height: 92.3rem;
+    margin: 2.2rem 0;
+    background-color: #FFB40A;
+    border-top-right-radius: 2.8rem;
+    border-bottom-right-radius: 2.8rem;
+}
+
+.main {
+    grid-area: main;
+    height: 92.3rem;
+    margin: 2.2rem 6.6rem;
+}
+
+.content-title {
+    line-height: 5.8rem;
+    letter-spacing: 0.064rem;
+    margin: 2.4rem 0 0.6rem 0;
+}
+
+.content-text {
+    font: normal 400 2.4rem/3.5rem sans-serif;
+    letter-spacing: 0.048rem;
+    margin-bottom: 2.9rem;
+}
+
+.links {
+    grid-area: links;
+    text-align: center;
+    line-height: 92.3rem;
+    margin: 2.2rem 0;
+    background-color: #FFD36F;
+    border-top-left-radius: 2.8rem;
+    border-bottom-left-radius: 2.8rem;
+}
+
+.footer {
+    grid-area: footer;
+    height: 21.4rem;
+    text-align: center;
+    line-height: 21.4rem;
+    background-color: #A82800;
+    color: #fff;
+}
+
+/*mobile styles*/
+
+@media screen and (max-width: 960px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 21.4rem 10.9rem 1 fr 10.9rem 21.4rem;
+        grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "links"
+        "footer";
+    }
+
+    .title {
+        font-size: 3.2rem;
+    }
+
+    .nav-title,
+    .links-title {
+        margin-left: 3.3rem;
+    }
+
+    .nav {
+        text-align: start;
+        line-height: 10.9rem;
+        margin: 0;
+        background-color: #FFB40A;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 2.8rem;
+        border-bottom-right-radius: 2.8rem;
+    }
+    .main {
+        text-align: start;
+        margin: 1.6rem 3.3rem 0 3.3rem;
+        height: auto;
+    }
+
+    .links {
+        text-align: start;
+        line-height: 10.9rem;
+        margin: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 2.8rem;
+        border-top-right-radius: 2.8rem;
+    }
+
+}
